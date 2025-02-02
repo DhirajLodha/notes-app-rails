@@ -18579,58 +18579,20 @@ Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms (2 queries, 1 cached
 
 [dotenv] Set [36mDATABASE_URL[0m
 [dotenv] Loaded [33m.env[0m
-Started POST "/api/v1/login" for ::1 at 2025-02-02 15:00:04 +0530
-  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MySkillsApi'*/[0m
+Started POST "/api/v1/login" for ::1 at 2025-02-02 15:01:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MySkillsApi'*/[0m
 Processing by Api::V1::AuthenticationController#login as HTML
   Parameters: {"email"=>"[FILTERED]", "password"=>"[FILTERED]", "authentication"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'dhiraj@0gmail.com' LIMIT 1 /*action='login',application='MySkillsApi',controller='authentication'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'dhirsj@gmail.com' LIMIT 1 /*action='login',application='MySkillsApi',controller='authentication'*/[0m
   ↳ app/controllers/api/v1/authentication_controller.rb:6:in `login'
-Completed 401 Unauthorized in 36ms (Views: 0.2ms | ActiveRecord: 6.2ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 401 Unauthorized in 43ms (Views: 0.1ms | ActiveRecord: 6.0ms (1 query, 0 cached) | GC: 14.6ms)
 
 
-Started POST "/api/v1/login" for ::1 at 2025-02-02 15:00:11 +0530
-Processing by Api::V1::AuthenticationController#login as HTML
-  Parameters: {"email"=>"[FILTERED]", "password"=>"[FILTERED]", "authentication"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}
-  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'dhiraj@gmail.com' LIMIT 1 /*action='login',application='MySkillsApi',controller='authentication'*/[0m
-  ↳ app/controllers/api/v1/authentication_controller.rb:6:in `login'
-Completed 200 OK in 184ms (Views: 0.2ms | ActiveRecord: 3.3ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/dashboard" for ::1 at 2025-02-02 15:00:11 +0530
-Started GET "/api/v1/users/1" for ::1 at 2025-02-02 15:00:11 +0530
-Processing by Api::V1::NotesController#index as HTML
-Processing by Api::V1::UsersController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='MySkillsApi',controller='notes'*/[0m
-  ↳ app/controllers/application_controller.rb:11:in `authenticate_request'
-  [1m[36mNote Load (0.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = 1 /*action='index',application='MySkillsApi',controller='notes'*/[0m
-  ↳ app/controllers/api/v1/notes_controller.rb:5:in `index'
-Completed 200 OK in 35ms (Views: 11.6ms | ActiveRecord: 4.9ms (2 queries, 0 cached) | GC: 13.9ms)
-
-
-Started GET "/api/v1/dashboard" for ::1 at 2025-02-02 15:00:11 +0530
-Processing by Api::V1::NotesController#index as HTML
-  [1m[36mUser Load (39.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='MySkillsApi',controller='users'*/[0m
-  ↳ app/controllers/application_controller.rb:11:in `authenticate_request'
-  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
-  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='MySkillsApi',controller='notes'*/[0m
-  ↳ app/controllers/api/v1/users_controller.rb:15:in `show'
-  ↳ app/controllers/application_controller.rb:11:in `authenticate_request'
-Completed 200 OK in 47ms (Views: 0.6ms | ActiveRecord: 45.2ms (2 queries, 1 cached) | GC: 14.6ms)
-
-
-  [1m[36mNote Load (1.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."user_id" = 1 /*action='index',application='MySkillsApi',controller='notes'*/[0m
-  ↳ app/controllers/api/v1/notes_controller.rb:5:in `index'
-Completed 200 OK in 14ms (Views: 4.9ms | ActiveRecord: 4.4ms (2 queries, 0 cached) | GC: 1.1ms)
-
-
-Started GET "/api/v1/users/1" for ::1 at 2025-02-02 15:00:11 +0530
-Processing by Api::V1::UsersController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='MySkillsApi',controller='users'*/[0m
-  ↳ app/controllers/application_controller.rb:11:in `authenticate_request'
-  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
-  ↳ app/controllers/api/v1/users_controller.rb:15:in `show'
-Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.7ms (2 queries, 1 cached) | GC: 0.6ms)
-
-
+[dotenv] Set [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_URL[0m
+[dotenv] Loaded [33m.env[0m
